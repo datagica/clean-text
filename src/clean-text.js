@@ -80,6 +80,38 @@ export class CleanText {
     this.pattern = new RegExp(`[ :\\s${splitCharacters}]+`, 'g');
   }
 
+  keepText(text, cb) {
+    const finalResult = text
+      .replace(/(?:\t|\r|\n)+/g, ' ')
+      .replace(/\s+/g, ' ');
+    if (typeof cb !== 'undefined') {
+      cb(finalResult);
+    } else {
+      return finalResult;
+    }
+  }
+  keepWords(text, cb) {
+    const finalResult = text
+      .replace(/(?:\t|\r|\n)+/g, ' ')
+      .replace(/(?:!|\:|\?|;|,)/g, ' ')
+      .replace(/(?:"|'|\(|\))/g, ' ')
+      .replace(/\s+/g, ' ');
+    /*
+      .replace(/àâäã/,'a')
+      .replace(/èéêë/,'e')
+      .replace(/îï/,'i')
+      .replace(/ôöõ/,'o')
+      .replace(/ûü/,'u')
+      .replace(/ñ/,'n');
+      */
+
+    if (typeof cb !== 'undefined') {
+      cb(finalResult);
+    } else {
+      return finalResult;
+    }
+  }
+
   cleanText(txt) {
     return txt.replace(this.pattern, ' ').trim();
   }
