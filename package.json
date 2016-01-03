@@ -1,6 +1,6 @@
 {
   "name": "@datagica/clean-text",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Trims and cleans a text from its punctuation and other weird space characters",
   "main": "./lib/clean-text.js",
   "scripts": {
