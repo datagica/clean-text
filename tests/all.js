@@ -2,7 +2,7 @@ const chai = require('chai');
 chai.use(require('chai-fuzzy'));
 const expect = chai.expect;
 
-import cleanText from "../../lib/clean-text";
+const cleanText = require("../lib/clean-text");
 
 describe('@datagica/clean-text', () => {
 
